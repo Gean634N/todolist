@@ -2,7 +2,7 @@
 
 ## What will be developed?
 
--A list of tasks web will be developed using `ReactJS`, `CSS` and `TypeScript`.
+-A list of tasks web will be developed using `ReactJS`, `TypeScript`, `CSS` and `Styled-Components`.
 
 ## What I pretend:
 
