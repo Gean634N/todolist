@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 type ContainerProps = {
   done: boolean;
+  selected: boolean;
 }
 
-export const Container = styled.div(({ done }: ContainerProps) => (
+export const Container = styled.div(({ done, selected }: ContainerProps) => (
   `
   display: fles;
   background-color: #20212C;
@@ -21,7 +22,8 @@ export const Container = styled.div(({ done }: ContainerProps) => (
 
   label {
     color: #eee;
-    text-decoration: ${done ? 'line-through' : 'initial'};
+    user-select: none;
+    text-decoration: ${done ? 'line-through' : selected ? 'underline' : 'initial'};
   }
 `
 ));

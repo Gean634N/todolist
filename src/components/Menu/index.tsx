@@ -1,12 +1,19 @@
 import * as C from './style';
 
-export const Menu = () => {
+type Props = {
+  handleButtons: { handleRemove: () => void },
+}
+
+
+export const Menu = ({ handleButtons }: Props) => {
+  const { handleRemove } = handleButtons;
+
   return (
     <C.Container>
-      <button>Remove</button>
-      <button>Remove All</button>
-      <button>Clear All</button>
-      <button>Save</button>
+      <button className="action__buttom" onClick={ handleRemove }>Remove</button>
+      <button className="action__buttom">Remove All</button>
+      <button className="action__buttom">Clear All</button>
+      <button className="action__buttom">Save</button>
     </C.Container>
   );
 }

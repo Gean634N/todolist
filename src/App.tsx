@@ -14,6 +14,7 @@ const App = () => {
         id: 1,
         name: taskName,
         done: false,
+        selectd: false,
       }])
     } else {
       let newList = [...list];
@@ -21,6 +22,7 @@ const App = () => {
         id: list[list.length -1].id + 1,
         name: taskName,
         done: false,
+        selectd: false,
       });
       setList(newList)  
     }
@@ -35,6 +37,27 @@ const App = () => {
     setList(newList);
   }
 
+  const hendleClick = (taskSelected: boolean, taskId: number) => {
+    let newList = list.map((task) => {
+      if (task.id !== taskId) {
+        task.selectd = false;
+        return task;
+      }
+      task.selectd = taskSelected;
+      return task;
+    });
+    setList(newList);
+  }
+
+  const handleRemove = () => {
+    let newList = list.filter((task) => task.selectd !== true);
+    setList(newList);
+  }
+
+  const handleButtons = {
+    handleRemove,
+  }
+
   return (
     <C.Container>
       <>
@@ -44,13 +67,13 @@ const App = () => {
           <AddArea onEnter={ handleAddTask } />
 
           { list.map((item, index) => (
-            <ListItem key={ index } item={ item } onChecked={ hendleChecked } />
+            <ListItem key={ index } item={ item } onChecked={ hendleChecked } labelClick={ hendleClick } />
           )) }
         </C.Area>
       </>
 
       <C.Area>
-        <Menu />
+        <Menu handleButtons={ handleButtons } />
       </C.Area>
     </C.Container>
   );
