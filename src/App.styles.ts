@@ -4,11 +4,14 @@ export const Container = styled.div`
   background-color: #17181F;
   color: #797A81;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Area = styled.div`
   margin: auto;
   max-width: 980px;
+  width: 100%;
   padding: 10px;
 `;
 

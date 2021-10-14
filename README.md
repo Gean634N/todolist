@@ -6,13 +6,13 @@
 
 ## What I pretend:
 
-- Add tasks to the list.
-- Remove tasks from the list.
-- Mark tasks as completed.
-- Remove all completed tasks.
-- Clear to-do list.
-- Save the list so that when I go back to the site it loads automatically.
-- Responsivity as a bonus.
+- [ ] Add tasks to the list.
+- [ ] Remove tasks from the list.
+- [ ] Mark tasks as completed.
+- [ ] Remove all completed tasks.
+- [ ] Clear to-do list.
+- [ ] Save the list so that when I go back to the site it loads automatically.
+- [ ] Responsivity as a bonus.
 
 
 <br/><br/>
