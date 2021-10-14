@@ -21,7 +21,7 @@ export const ListItem = ({ item, onChecked, labelClick }: Props) => {
   }
   
   return (
-    <C.Container done={isChecked} selected={item.selectd} >
+    <C.Container done={item.done} selected={item.selectd} >
       <input 
         type="checkbox"
         checked={ item.done }
@@ -29,7 +29,7 @@ export const ListItem = ({ item, onChecked, labelClick }: Props) => {
       />
       <label
         onClick={ hendleClick }
-        onDoubleClick={ () => handleCheck(item.id, !isChecked) }
+        onDoubleClick={ () => handleCheck(item.id, !item.done) }
       >
         { item.name }
       </label>

@@ -54,8 +54,20 @@ const App = () => {
     setList(newList);
   }
 
+  const handleRemoveAllDone = () => {
+    let newList = list.filter((task) => task.done !== true);
+    setList(newList);
+  }
+
+  const clearAll = () => {
+    setList([]);
+  }
+
+
   const handleButtons = {
     handleRemove,
+    handleRemoveAllDone,
+    clearAll,
   }
 
   return (
