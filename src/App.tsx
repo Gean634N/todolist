@@ -6,7 +6,10 @@ import { AddArea } from './components/AddArea';
 import { Menu } from './components/Menu';
 
 const App = () => {
-  const [list, setList] = useState<Item[]>([])
+  const localSavadList = localStorage.getItem('savedList');
+  const savedList = JSON.parse(localSavadList || '[]');
+
+  const [list, setList] = useState<Item[]>(savedList);
 
   const handleAddTask = (taskName: string) => {
     if (list.length === 0) { 
@@ -59,15 +62,21 @@ const App = () => {
     setList(newList);
   }
 
-  const clearAll = () => {
+  const handleClearAll = () => {
     setList([]);
+  }
+
+  const handleSaved = () => {
+    localStorage.setItem('savedList', JSON.stringify(list));
+    alert('lista salva');
   }
 
 
   const handleButtons = {
     handleRemove,
     handleRemoveAllDone,
-    clearAll,
+    handleClearAll,
+    handleSaved,
   }
 
   return (
